@@ -4,6 +4,10 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping\ManyToMany;
+use Doctrine\ORM\Mapping\JoinTable;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * @ORM\Entity
@@ -33,9 +37,23 @@ class User extends BaseUser {
      */
     protected $website;
 
+    /**
+     * @ManyToMany(targetEntity="User", mappedBy="contacts")
+     */
+    protected $contactsWithMe;
+
+    /**
+     * @ManyToMany(targetEntity="User", inversedBy="contactsWithMe")
+     * @JoinTable(name="contacts", 
+     *            joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+     *            inverseJoinColumns={@JoinColumn(name="contact_user_id", referencedColumnName="id")})
+     */
+    protected $contacts;
+
     public function __construct() {
         parent::__construct();
-        // your own logic
+        $this->contactsWithMe = new ArrayCollection();
+        $this->contacts = new ArrayCollection();
     }
 
     function getAddress() {
@@ -65,6 +83,34 @@ class User extends BaseUser {
     function setWebsite($website) {
         $this->website = $website;
 
+        return $this;
+    }
+
+    function getContactsWithMe() {
+        return $this->contactsWithMe;
+    }
+
+    function addContactsWithMe(User $idcontact) {
+        $this->contactsWithMe[] = $idcontact;
+        return $this;
+    }
+
+    function removeContactsWithMe(User $idcontact) {
+        $this->contactsWithMe->removeElement($idcontact);
+        return $this;
+    }
+
+    function getContacts() {
+        return $this->contacts;
+    }
+
+    function addContacts(User $idcontact) {
+        $this->contacts[] = $idcontact;
+        return $this;
+    }
+
+    function removeContacts(User $idcontact) {
+        $this->contacts->removeElement($idcontact);
         return $this;
     }
 
