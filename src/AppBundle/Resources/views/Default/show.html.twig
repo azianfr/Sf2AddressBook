@@ -3,6 +3,6 @@
 {% block fos_user_content %}
     {% include "FOSUserBundle:Profile:show_content.html.twig" %}
     {% if user not in app.user.contacts %}
-        <a href="{{ path("contact_add", {"id": user.id} ) }}">Ajouter</a>
+        <a href="{{ path("contact_add", {"id": user.id} ) }}" class="btn btn-default">Ajouter</a>
     {% endif %}
 {% endblock fos_user_content %}

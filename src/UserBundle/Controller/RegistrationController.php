@@ -10,10 +10,10 @@ use Symfony\Component\Routing\Annotation\Route;
 class RegistrationController extends BaseController {
 
     /**
-     * @Route("/register/{type}", defaults={"type" = "member"}, name="my_register")
+     * @Route("/register", name="my_register")
      */
-    public function registerAction() {
-        $response = parent::registerAction();
+    public function registerAction(Request $request) {
+        $response = parent::registerAction($request);
         
         return $response;
     }

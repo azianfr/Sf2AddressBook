@@ -18,3 +18,9 @@ services:
         arguments: [%fos_user.model.user.class%]
         tags:
             - { name: form.type, alias: app_user_profile }
+
+    app.registrationConfirm:
+        class: AppBundle\EventListener\RegistrationConfirmListener
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }

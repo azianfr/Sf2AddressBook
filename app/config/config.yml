@@ -107,3 +107,5 @@ fos_user:
         form:
             type:               app_user_registration
             validation_groups:  [Registration, Default]
+
+
