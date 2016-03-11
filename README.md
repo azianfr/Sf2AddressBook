@@ -1,10 +1,8 @@
 # Carnet d'adresses
-____
 
 Un projet Symfony2
 
 # Installation
-____
 
 Cloner le projet 
 
@@ -27,7 +25,14 @@ php app/console assetic:dump
 php app/console assets:install
 ```
 
+Génerer des utilisateurs
+```
+php app/console doctrine:fixtures:load [--append // si on ne souhaite pas purger la bdd]
+```
+
 Lancer le serveur et c'est parti ! :)
 ```
-php app/console server:run
+php app/console server:start
 ```
+
+Allez maintenant sur [http://localhost:8000](http://localhost:8000)
