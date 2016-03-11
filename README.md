@@ -27,7 +27,7 @@ php app/console assets:install
 
 Génerer des utilisateurs
 ```
-php app/console doctrine:fixtures:load [--append // si on ne souhaite pas purger la bdd]
+php app/console doctrine:fixtures:load [--append] // si on ne souhaite pas purger la bdd
 ```
 
 Lancer le serveur et c'est parti ! :)
