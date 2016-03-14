@@ -46,6 +46,9 @@ class DefaultController extends Controller {
     public function showAction($id) {
         $em = $this->getDoctrine()->getManager();
         $contact = $em->getRepository("AppBundle:User")->find($id);
+        if (!$contact) {
+            throw $this->createNotFoundException("User with id " . $id . " not found");
+        }
 
         return array("user" => $contact);
     }
@@ -59,6 +62,9 @@ class DefaultController extends Controller {
         $em = $this->getDoctrine()->getManager();
         $contact = $em->getRepository("AppBundle:User")->find($id);
 
+        if (!$contact) {
+            throw $this->createNotFoundException("User with id " . $id . " not found");
+        }
         $user->addContacts($contact);
         $contact->addContactsWithMe($user);
         $em->persist($user);

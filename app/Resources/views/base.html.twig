@@ -57,6 +57,14 @@
         {% block body %}
         {% endblock %}
 
+        {% block footer %}
+            <footer class="footer">
+                <div class="container">
+                    <p class="text-muted">Khim William © 2016</p>
+                </div>
+            </footer>
+        {% endblock %}
+
         {% block javascripts %}
             <script src="{{ asset('js/jquery.min.js') }}"></script>
             <script src="{{ asset('js/bootstrap.js') }}"></script>
