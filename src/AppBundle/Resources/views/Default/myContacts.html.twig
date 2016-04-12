@@ -6,7 +6,7 @@
         <ul>
             {% for contact in user.contacts %}
                 <li>
-                    <a href="{{ path("contact_show", {'id': user.id} ) }}">{{ contact.email }}</a> |
+                    <a href="{{ path("contact_show", {'id': contact.id} ) }}">{{ contact.email }}</a> |
                     <a href="{{ path("contact_remove", {"id": contact.id} ) }}">Supprimer</a>
                 </li>
             {% endfor %}
