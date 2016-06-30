@@ -7,7 +7,7 @@ Un projet Symfony2
 Cloner le projet 
 
 ```
-git clone git@github.com:azianfr/Symfony2TestProject.git
+git clone git@github.com:azianfr/Sf2AddressBook.git
 cd Symfony2TestProject
 ```
 
