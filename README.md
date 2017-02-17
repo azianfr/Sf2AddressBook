@@ -8,7 +8,7 @@ Cloner le projet
 
 ```
 git clone git@github.com:azianfr/Sf2AddressBook.git
-cd Symfony2TestProject
+cd Sf2AddressBook
 ```
 
 Installer les dépendences avec [composer](https://getcomposer.org/).
