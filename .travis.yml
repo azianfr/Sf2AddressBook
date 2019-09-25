@@ -1,7 +1,14 @@
 php:
 - 5.5
 
-before_script:
+services:
+- mysql
+
+before-install:
+- composer self-update
+
+install:
+- cp app/config/parameters.yml.travis app/config/parameters.yml
 - cp app/config/parameters.yml.travis app/config/parameters.yml
 - composer install
 - php app/console doctrine:database:create --env=test
@@ -9,4 +16,4 @@ before_script:
 - php app/console doctrine:fixtures:load -n --env=test
 
 script:
-- phpunit -c app
+- phpunit
