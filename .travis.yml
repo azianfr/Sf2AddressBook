@@ -32,4 +32,4 @@ install:
 - php app/console doctrine:fixtures:load -n --env=test
 
 script:
-- phpunit -c app
+- ./vendor/phpunit/phpunit/phpunit
