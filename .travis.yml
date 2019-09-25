@@ -28,7 +28,6 @@ install:
 - cp app/config/parameters.yml.travis app/config/parameters.yml
 - mysql -e 'CREATE DATABASE symfony;'
 - composer install --no-progress --no-interaction --prefer-dist --no-suggest
-- php app/console doctrine:database:create --env=test
 - php app/console doctrine:schema:create --env=test
 - php app/console doctrine:fixtures:load -n --env=test
 
