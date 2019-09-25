@@ -33,7 +33,7 @@ class User extends BaseUser {
     protected $phone;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=255)
      */
     protected $website;
 
