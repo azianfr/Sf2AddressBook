@@ -23,6 +23,7 @@ matrix:
 
 before_install:
 - composer self-update
+- mysql -uroot "CREATE DATABASE symfony"
 
 install:
 - cp app/config/parameters.yml.travis app/config/parameters.yml

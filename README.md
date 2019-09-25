@@ -1,4 +1,4 @@
-https://travis-ci.org/azianfr/Sf2AddressBook.svg?branch=master
+[![Build Status](https://travis-ci.org/azianfr/Sf2AddressBook.svg?branch=master)](https://travis-ci.org/azianfr/Sf2AddressBook)
 
 # Carnet d'adresses
 
