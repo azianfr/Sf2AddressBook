@@ -1,14 +1,30 @@
 php:
 - 5.5
 
+sudo: false
+
+cache:
+  directories:
+    - $HOME/.composer/cache/files
+
 services:
 - mysql
 
-before-install:
+matrix:
+  # Fast finish allows to set the build as "finished" even if the "allow_failures" matrix elements are not finished yet.
+  fast_finish: true
+  include:
+    - php: 5.5
+    - php: 5.6
+    - php: 7.0
+    - php: hhvm
+  allow_failures:
+    - php: hhvm
+
+before_install:
 - composer self-update
 
 install:
-- cp app/config/parameters.yml.travis app/config/parameters.yml
 - cp app/config/parameters.yml.travis app/config/parameters.yml
 - composer install
 - php app/console doctrine:database:create --env=test
@@ -16,4 +32,4 @@ install:
 - php app/console doctrine:fixtures:load -n --env=test
 
 script:
-- phpunit
+- phpunit -c app

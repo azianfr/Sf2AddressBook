@@ -1,3 +1,5 @@
+https://travis-ci.org/azianfr/Sf2AddressBook.svg?branch=master
+
 # Carnet d'adresses
 
 Un projet Symfony2
