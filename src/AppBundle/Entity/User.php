@@ -28,7 +28,7 @@ class User extends BaseUser {
     protected $address;
 
     /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="string", length=50)
      */
     protected $phone;
 
